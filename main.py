@@ -49,10 +49,29 @@ while run:
            run = False
     ball.reset()
     ball.update()
-    raketa.update()
+    raketa.update_l()
     raketa2.reset()
-    raketa2.update()
+    raketa2.update_r()
     raketa.reset()
+
+
+    if sprite.collide_rect(raketa, ball) or sprite.collide_rect(raketa2, ball):
+        speed_x *= -1
+        speed_y *= 1
+    if ball.rect.colliderect(raketa.rect):
+        speed_y *= -1
+    if ball.rect.y > 550:
+        speed_y *= -1
+    if ball.rect.y < 0:
+        speed_y *= -1
+    if ball.rect.x > 700:
+        run = False
+    if ball.rect.x < 0:
+        run = False
+
+
+
+
     ball.rect.x += speed_x
     ball.rect.y += speed_y
     display.update()
