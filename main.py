@@ -47,8 +47,12 @@ while run:
     for e in event.get():
         if e.type == QUIT:
            run = False
-
-
+    ball.reset()
+    ball.update()
+    raketa.update()
+    raketa2.reset()
+    raketa2.update()
+    raketa.reset()
     ball.rect.x += speed_x
     ball.rect.y += speed_y
     display.update()
