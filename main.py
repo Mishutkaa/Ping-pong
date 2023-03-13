@@ -1,4 +1,7 @@
 from pygame import *
+mixer.init()
+mixer.music.load('pvzgi.mp3')
+mixer.music.play()
 class GameSprite(sprite.Sprite):
    def __init__(self, player_image, player_x, player_y, player_speed, wight, height):
        super().__init__()
